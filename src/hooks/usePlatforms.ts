@@ -9,7 +9,9 @@ interface Platform {
 }
 
 const fetchData = () =>
-  apiClient.get<FetchResponse<Platform>>("/platforms").then((res) => res.data);
+  apiClient
+    .get<FetchResponse<Platform>>("/platforms/lists/parents")
+    .then((res) => res.data);
 
 const usePlatforms = () =>
   useQuery({
